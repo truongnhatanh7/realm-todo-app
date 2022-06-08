@@ -9,6 +9,8 @@ import Foundation
 import RealmSwift
 
 class Group: Object {
+    
     @Persisted var name: String
     @Persisted var tasks: List<Task>
 }
+ 
