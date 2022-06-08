@@ -17,28 +17,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GNi-3K-ei9">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="18" y="44" width="378" height="818"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jUH-Bv-jag">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="742"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupCell" id="7AW-Zs-0qN">
-                                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="378" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7AW-Zs-0qN" id="hi4-bA-7L1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="349.5" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new group name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LSc-dR-PCU" customClass="TextFieldWithPadding" customModule="realm_todo_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="750" width="414" height="18.5"/>
+                                        <rect key="frame" x="0.0" y="742" width="378" height="18.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37t-ca-Gtd">
-                                        <rect key="frame" x="0.0" y="768.5" width="414" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="760.5" width="378" height="57.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" imagePadding="-1" cornerStyle="fixed">
                                             <attributedString key="attributedTitle">
@@ -48,7 +48,7 @@
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
-                                            <directionalEdgeInsets key="contentInsets" top="12" leading="0.0" bottom="12" trailing="0.0"/>
+                                            <directionalEdgeInsets key="contentInsets" top="16" leading="0.0" bottom="16" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="addBtnPressed:" destination="qah-dj-CSY" eventType="touchUpInside" id="Ia6-WN-Wki"/>
@@ -62,19 +62,83 @@
                         <constraints>
                             <constraint firstItem="GNi-3K-ei9" firstAttribute="top" secondItem="15p-FC-rn0" secondAttribute="top" id="DO1-K6-nf0"/>
                             <constraint firstItem="15p-FC-rn0" firstAttribute="bottom" secondItem="GNi-3K-ei9" secondAttribute="bottom" id="P5K-JE-Ttg"/>
-                            <constraint firstItem="GNi-3K-ei9" firstAttribute="leading" secondItem="15p-FC-rn0" secondAttribute="leading" id="U4l-rg-pmW"/>
-                            <constraint firstItem="15p-FC-rn0" firstAttribute="trailing" secondItem="GNi-3K-ei9" secondAttribute="trailing" id="XH0-Da-TyE"/>
+                            <constraint firstItem="GNi-3K-ei9" firstAttribute="leading" secondItem="15p-FC-rn0" secondAttribute="leading" constant="18" id="U4l-rg-pmW"/>
+                            <constraint firstItem="15p-FC-rn0" firstAttribute="trailing" secondItem="GNi-3K-ei9" secondAttribute="trailing" constant="18" id="XH0-Da-TyE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addBtn" destination="37t-ca-Gtd" id="hFO-i7-uDO"/>
                         <outlet property="tableView" destination="jUH-Bv-jag" id="bGp-9d-U5X"/>
                         <outlet property="textField" destination="LSc-dR-PCU" id="qXw-2S-Dyf"/>
+                        <segue destination="gQn-fC-MTN" kind="show" identifier="goToTaskView" id="w97-67-JHj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5T-Gc-cHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3384.057971014493" y="1788.6160714285713"/>
+            <point key="canvasLocation" x="-3549" y="1834"/>
+        </scene>
+        <!--Task View Controller-->
+        <scene sceneID="mcU-YZ-3SQ">
+            <objects>
+                <viewController id="gQn-fC-MTN" customClass="TaskViewController" customModule="realm_todo_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ymx-Vm-QYf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iEk-df-W2W">
+                                <rect key="frame" x="18" y="44" width="378" height="798"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cqa-hw-eXN">
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="721.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" id="MWh-bO-oTq" customClass="TableViewCellWithPadding" customModule="realm_todo_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="44.5" width="378" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MWh-bO-oTq" id="1sh-Dk-Dmj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4s-vT-Z51" customClass="TextFieldWithPadding" customModule="realm_todo_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="721.5" width="378" height="18.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBn-jd-MeC">
+                                        <rect key="frame" x="0.0" y="740" width="378" height="58"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" title="Add" cornerStyle="fixed">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                            <directionalEdgeInsets key="contentInsets" top="16" leading="0.0" bottom="16" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addTaskPressed:" destination="gQn-fC-MTN" eventType="touchUpInside" id="l5h-kh-Cke"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zvX-JK-IOl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iEk-df-W2W" firstAttribute="leading" secondItem="zvX-JK-IOl" secondAttribute="leading" constant="18" id="MTB-gT-oLF"/>
+                            <constraint firstItem="zvX-JK-IOl" firstAttribute="bottom" secondItem="iEk-df-W2W" secondAttribute="bottom" id="iUo-Pg-4dk"/>
+                            <constraint firstItem="iEk-df-W2W" firstAttribute="top" secondItem="zvX-JK-IOl" secondAttribute="top" id="tqs-Ak-vP6"/>
+                            <constraint firstItem="zvX-JK-IOl" firstAttribute="trailing" secondItem="iEk-df-W2W" secondAttribute="trailing" constant="18" id="uLK-dm-yjg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dGa-ur-xhI"/>
+                    <connections>
+                        <outlet property="tableView" destination="cqa-hw-eXN" id="p47-eG-hnL"/>
+                        <outlet property="textField" destination="J4s-vT-Z51" id="9hD-1T-0yY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73F-mz-DH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2688" y="1833"/>
         </scene>
     </scenes>
     <resources>

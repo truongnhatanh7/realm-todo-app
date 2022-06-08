@@ -17,6 +17,8 @@
 		556AABC5284F5258003D1D30 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556AABC4284F5258003D1D30 /* Group.swift */; };
 		556AABC7284F5E9E003D1D30 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556AABC6284F5E9E003D1D30 /* GroupViewController.swift */; };
 		556AABC928507266003D1D30 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556AABC828507266003D1D30 /* TextFieldWithPadding.swift */; };
+		556AABCB2850898E003D1D30 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556AABCA2850898E003D1D30 /* TaskViewController.swift */; };
+		556AABCD28509EDF003D1D30 /* TableViewCellWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556AABCC28509EDF003D1D30 /* TableViewCellWithPadding.swift */; };
 		79EE57555020944596E888FC /* Pods_realm_todo_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F249B3979B35A7B827F9D3 /* Pods_realm_todo_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		556AABC4284F5258003D1D30 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		556AABC6284F5E9E003D1D30 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		556AABC828507266003D1D30 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		556AABCA2850898E003D1D30 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		556AABCC28509EDF003D1D30 /* TableViewCellWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithPadding.swift; sourceTree = "<group>"; };
 		55D9A71C82BBFF33B6751516 /* Pods-realm-todo-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realm-todo-app.release.xcconfig"; path = "Target Support Files/Pods-realm-todo-app/Pods-realm-todo-app.release.xcconfig"; sourceTree = "<group>"; };
 		D32EE808681412176535422B /* Pods-realm-todo-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realm-todo-app.debug.xcconfig"; path = "Target Support Files/Pods-realm-todo-app/Pods-realm-todo-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +109,7 @@
 			children = (
 				556AABAF284F39AD003D1D30 /* ViewController.swift */,
 				556AABC6284F5E9E003D1D30 /* GroupViewController.swift */,
+				556AABCA2850898E003D1D30 /* TaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				556AABB1284F39AD003D1D30 /* Main.storyboard */,
+				556AABCC28509EDF003D1D30 /* TableViewCellWithPadding.swift */,
 				556AABC828507266003D1D30 /* TextFieldWithPadding.swift */,
 			);
 			path = Views;
@@ -247,8 +253,10 @@
 				556AABC3284F51EA003D1D30 /* Task.swift in Sources */,
 				556AABB0284F39AD003D1D30 /* ViewController.swift in Sources */,
 				556AABAC284F39AD003D1D30 /* AppDelegate.swift in Sources */,
+				556AABCB2850898E003D1D30 /* TaskViewController.swift in Sources */,
 				556AABC5284F5258003D1D30 /* Group.swift in Sources */,
 				556AABAE284F39AD003D1D30 /* SceneDelegate.swift in Sources */,
+				556AABCD28509EDF003D1D30 /* TableViewCellWithPadding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

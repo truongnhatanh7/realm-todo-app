@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class Group: Object {
-    
+    @Persisted(primaryKey: true) var id = UUID()
     @Persisted var name: String
     @Persisted var tasks: List<Task>
 }

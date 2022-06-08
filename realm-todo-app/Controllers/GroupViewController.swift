@@ -9,9 +9,9 @@ import UIKit
 import RealmSwift
 
 class GroupViewController: UIViewController {
-    let realm = try! Realm()
-    var groups = [Group]()
     
+    var groups = [Group]()
+    let realm = try! Realm()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var textField: UITextField!
@@ -30,6 +30,10 @@ class GroupViewController: UIViewController {
 // MARK: - Table view data source
 extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Groups"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
     }
@@ -42,6 +46,14 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToTaskView", sender: groups[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TaskViewController
+        destinationVC.selectedGroup = sender as! Group
+    }
 
        
 }
@@ -50,7 +62,7 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
 extension GroupViewController {
     func addNewGroup() {
         let newGroup = Group()
-        if let groupName = textField.text {
+        if let groupName = textField.text, groupName != "" {
             newGroup.name = groupName
             newGroup.tasks = List<Task>()
             try! realm.write {
@@ -58,6 +70,7 @@ extension GroupViewController {
             }
             groups.append(newGroup)
             textField.text = ""
+            textField.becomeFirstResponder()
             tableView.reloadData()
         }
     }
@@ -87,14 +100,14 @@ extension GroupViewController {
             self?.handleSwipeToDelete(indexPath: indexPath)
                 completionHandler(true)
         }
-        action.backgroundColor = .systemBlue
+        
         action.backgroundColor = .red
         return UISwipeActionsConfiguration(actions: [action])
     }
     
     func handleSwipeToDelete(indexPath: IndexPath) {
-        // TODO: implement delete child
         try! realm.write {
+            realm.delete(groups[indexPath.row].tasks)
             realm.delete(groups[indexPath.row])
             groups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
